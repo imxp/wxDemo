@@ -1,11 +1,7 @@
 Component({
   properties: {
-    like: {
-      type: Boolean
-    },
-    count: {
-      type: Number
-    }
+    like: Boolean,
+    count: Number
   },
   data: {
     yesSrc: 'images/like.png',
@@ -17,11 +13,15 @@ Component({
       let count = this.properties.count
 
       count = like?count-1:count+1
-      
       this.setData({
         like: !like,
         count: count
       })
+
+      let behavior = this.properties.like?'like':'cancel'
+      this.triggerEvent('like',{
+        behavior: behavior
+      },{})
     }
   }
 })
