@@ -6,11 +6,19 @@ let likeModel = new LikeModel()
 
 Page({
   data: {
-    classic: null
+    classic: null,
+    latest: true,
+    first: false
   },
   onLike: function (event) {
     let behavior = event.detail.behavior
     likeModel.like(behavior, this.data.classic.id, this.data.classic.type)
+  },
+  onNext: function (event) {
+    
+  },
+  onPrevious: function (event) {
+    
   },
   onLoad: function (options) {
     classicModel.getLatest((res) => {
