@@ -16,9 +16,11 @@ Page({
     let behavior = event.detail.behavior
     likeModel.like(behavior, this.data.classic.id, this.data.classic.type)
   },
+
   onNext: function (event) {
     this._updateClassic('next')
   },
+  
   onPrevious: function (event) {
     this._updateClassic('previous')    
   },
