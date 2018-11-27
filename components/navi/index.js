@@ -18,7 +18,7 @@ Component({
     },
     onRight: function (event) {
       if(!this.properties.first){
-        this.triggerEvent('Right',{},{})
+        this.triggerEvent('right',{},{})
       }
     }
   }
