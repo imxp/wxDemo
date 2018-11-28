@@ -20,16 +20,12 @@ Page({
       this.setData({
         book: res
       })
-      console.log(res);
-      
     })
 
     comments.then((res) => {
       this.setData({
-        comments: res
+        comments: res.comments
       })
-      console.log(res);
-      
     })
 
     likeStatus.then((res) => {
@@ -37,8 +33,6 @@ Page({
         likeCount: res.like_status,
         likeCount: res.fav_nums
       })
-      console.log(res);
-      
     })
   }
 })
