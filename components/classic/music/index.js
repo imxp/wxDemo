@@ -5,7 +5,8 @@ const mMgr = wx.getBackgroundAudioManager()
 Component({
   behaviors: [classicBeh],
   properties: {
-    src: String
+    src: String,
+    title: String
   },
   data: {
     playing: false,
@@ -22,6 +23,7 @@ Component({
         this.setData({
           playing: true
         })
+        mMgr.title = this.properties.title
         mMgr.src = this.properties.src
       }else{
         this.setData({
