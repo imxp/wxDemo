@@ -10,6 +10,10 @@ Component({
 
   },
   methods: {
-
+    onTap: function (event) {
+      this.triggerEvent('tapping', {
+        text: this.properties.text
+      })
+    }
   }
 })
