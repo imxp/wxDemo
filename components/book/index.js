@@ -1,6 +1,7 @@
 Component({
   properties: {
-    book: Object
+    book: Object,
+    showLike: Boolean
   },
   data: {
 

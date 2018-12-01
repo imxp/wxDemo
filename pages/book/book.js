@@ -1,24 +1,32 @@
 import { BookModel } from '../../modules/book.js'
+import { random } from '../../util/common.js'
 
 let bookModel = new BookModel()
-
 
 Page({
   data: {
     books: [],
-    searching: false
+    searching: false,
+    more: ''
   },
-  onSearching: function (event) {
+  onSearching(event) {
     this.setData({
       searching: true
     })
   },
-  onCancel: function (event) {
+  onCancel(event) {
     this.setData({
       searching: false
     })
   },
-  onLoad: function (options) {
+
+  onReachBottom(){
+    this.setData({
+      more: random(16)
+    })
+  },
+
+  onLoad(options) {
     bookModel.getHotList().then((res) => {
       this.setData({
         books: res
